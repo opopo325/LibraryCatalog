@@ -149,3 +149,6 @@ E:\Kursova\LibraryCatalog\obj\Debug\net10.0\refint\LibraryCatalog.dll
 E:\Kursova\LibraryCatalog\obj\Debug\net10.0\LibraryCatalog.pdb
 E:\Kursova\LibraryCatalog\obj\Debug\net10.0\LibraryCatalog.genruntimeconfig.cache
 E:\Kursova\LibraryCatalog\obj\Debug\net10.0\ref\LibraryCatalog.dll
+E:\Kursova\LibraryCatalog\bin\Debug\net10.0\LibraryCatalog.staticwebassets.runtime.json
+E:\Kursova\LibraryCatalog\obj\Debug\net10.0\compressed\2f25i0ircc-{0}-s6phx7su74-s6phx7su74.gz
+E:\Kursova\LibraryCatalog\obj\Debug\net10.0\compressed\dyniz3od68-{0}-4065ulcbq7-4065ulcbq7.gz

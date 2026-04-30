@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Catalog</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-8 font-sans">
+    <div class="max-w-6xl mx-auto">
+        <h1 class="text-4xl font-bold mb-8 text-center text-blue-800">📚 Library Catalog</h1>
+        
+        <!-- Control Panel (Filters from Variant 7) -->
+        <div class="bg-white p-4 rounded-lg shadow-md mb-6 flex gap-4 flex-wrap justify-center">
+            <button onclick="loadAllItems()" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded transition">
+                All Items
+            </button>
+            <button onclick="loadSortedBookTitles()" class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded transition">
+                Sorted Book Titles
+            </button>
+            <button onclick="loadComputerMagazines()" class="bg-purple-500 hover:bg-purple-600 text-white px-4 py-2 rounded transition">
+                IT Magazines
+            </button>
+            <button onclick="loadOnlyMagazines()" class="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded transition">
+                Only Magazines
+            </button>
+        </div>
+
+        <!-- Data Table -->
+        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+            <table class="min-w-full text-left border-collapse">
+                <thead class="bg-gray-800 text-white">
+                    <tr>
+                        <th class="p-4 border-b">Type</th>
+                        <th class="p-4 border-b">Title</th>
+                        <th class="p-4 border-b">Theme</th>
+                        <th class="p-4 border-b">Details</th>
+                        <th class="p-4 border-b">Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="resultsTable" class="text-gray-700">
+                    <!-- Data will be injected here by JS -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+        <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+            
+            <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-green-500">
+                <h2 class="text-2xl font-bold mb-4 text-green-700">➕ Add New Book</h2>
+                <form id="addBookForm" class="space-y-3">
+                    <input type="text" id="bTitle" placeholder="Title" required class="w-full p-2 border rounded bg-gray-50">
+                    <input type="text" id="bTheme" placeholder="Theme" required class="w-full p-2 border rounded bg-gray-50">
+                    <input type="text" id="bAuthor" placeholder="Author" required class="w-full p-2 border rounded bg-gray-50">
+                    <input type="text" id="bPublisher" placeholder="Publisher" required class="w-full p-2 border rounded bg-gray-50">
+                    <div class="grid grid-cols-2 gap-3">
+                        <input type="number" id="bYear" placeholder="Year" required class="p-2 border rounded bg-gray-50">
+                        <input type="text" id="bLanguage" placeholder="Language" required class="p-2 border rounded bg-gray-50">
+                        <input type="number" id="bPages" placeholder="Pages Count" required class="p-2 border rounded bg-gray-50">
+                        <input type="number" step="0.01" id="bPrice" placeholder="Price" required class="p-2 border rounded bg-gray-50">
+                    </div>
+                    <button type="submit" class="w-full bg-green-500 text-white font-bold py-2 rounded hover:bg-green-600 transition">Save Book</button>
+                </form>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-orange-500">
+                <h2 class="text-2xl font-bold mb-4 text-orange-700">➕ Add New Magazine</h2>
+                <form id="addMagazineForm" class="space-y-3">
+                    <input type="text" id="mTitle" placeholder="Title" required class="w-full p-2 border rounded bg-gray-50">
+                    <input type="text" id="mTheme" placeholder="Theme" required class="w-full p-2 border rounded bg-gray-50">
+                    <div class="grid grid-cols-2 gap-3">
+                        <input type="number" id="mYear" placeholder="Year" required class="p-2 border rounded bg-gray-50">
+                        <input type="text" id="mLanguage" placeholder="Language" required class="p-2 border rounded bg-gray-50">
+                        <input type="number" id="mPages" placeholder="Pages Count" required class="p-2 border rounded bg-gray-50">
+                        <input type="number" id="mIssueNum" placeholder="Issue Number" required class="p-2 border rounded bg-gray-50">
+                        <input type="number" id="mIssuesPerYear" placeholder="Issues Per Year" required class="p-2 border rounded bg-gray-50">
+                        <input type="number" step="0.01" id="mPrice" placeholder="Annual Sub Price" required class="p-2 border rounded bg-gray-50">
+                    </div>
+                    <button type="submit" class="w-full bg-orange-500 text-white font-bold py-2 rounded hover:bg-orange-600 transition">Save Magazine</button>
+                </form>
+            </div>
+            
+        </div>
+        
+    <!-- Link to our JS logic -->
+    <script src="app.js"></script>
+</body>
+</html>

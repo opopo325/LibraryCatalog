@@ -34,6 +34,9 @@ if (app.Environment.IsDevelopment())
 
 app.UseCors("AllowAll");
 
+app.UseDefaultFiles();
+app.UseStaticFiles();
+
 // --- API ENDPOINTS ---
 
 // 1. ADD: Add a new book
@@ -169,7 +172,8 @@ app.MapGet("/api/magazines/{id}/issue-price", async (int id, LibraryContext db) 
 app.MapGet("/api/items", async (LibraryContext db) =>
 {
     var items = await db.CatalogItems.ToListAsync();
-    return Results.Ok(items);
+    
+    return Results.Ok(items.Select(i => (object)i));
 });
 
 // GET: View ALL books (full data, not just titles)
